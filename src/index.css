@@ -9,3 +9,97 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+
+.card {
+    width: 200px; /* Reduced width */
+    height: 275px; /* Reduced height */
+    border-radius: 15px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+  
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card .bottom-section {
+  margin-top: 10px; /* Adjusted margin */
+  padding: 8px 5px; /* Adjusted padding */
+}
+
+.card .bottom-section .title {
+  display: block;
+  font-size: 20px; /* Adjusted font size */
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px; /* Adjusted letter spacing */
+}
+
+.card .bottom-section .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px; /* Adjusted margin */
+}
+
+.card .bottom-section .row .item {
+  flex: 30%;
+  text-align: center;
+  padding: 3px;
+  color: rgba(170, 222, 243, 0.721);
+}
+
+.card .bottom-section .row .item .big-text {
+  font-size: 15px; /* Adjusted font size */
+  display: block;
+  font-weight: 800;
+}
+
+.card .bottom-section .row .item .regular-text {
+  font-size: 10px; /* Adjusted font size */
+  font-weight: 800;
+}
+
+.card .bottom-section .row .item:nth-child(2) {
+  border-left: 2px solid rgba(255, 255, 255, 0.126);
+  /* border-right: 1px solid rgba(255, 255, 255, 0.126); */
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+.card.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 90vw; /* Adjust the width to fit the screen */
+  max-height: 90vh; /* Adjust the max height to fit the screen */
+  overflow-y: auto; /* Enable vertical scrolling if the content exceeds the screen height */
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust the background color and opacity */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px; /* Adjust the box shadow */
+}
+
+.card.enlarged .blur-bg {
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.blur-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+}
